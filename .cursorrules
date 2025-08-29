@@ -1,0 +1,21 @@
+# Instructions
+
+During your interaction with the user, if you find anything reusable in this project (e.g. version of a library, model name), especially about a fix to a mistake you made or a correction you received, you should take note in the `Lessons` section in the `.cursorrules` file so you will not make the same mistake again.
+Use Scratchpad in .cursorrules for writing down current plan and progress.
+
+## Save Principle
+Be concise and provide only key summary about provided solution, without change details, what's done and benefits. If needed, you will be asked for details.
+
+# Lessons
+
+## User Specified Lessons
+- Always use local Python venv in `./venv`. Prefer `uv pip install`; fallback to `pip` if `uv` is unavailable.
+- For multi-line git messages in Cursor, write to a file and use `git commit -F <file>`; include "[Cursor] " prefix.
+- 🚫 NEVER MARK COMPLETED without user acceptance. ✅ WAIT FOR USER to confirm completion.
+
+# Scratchpad
+- Implemented Python client mirroring TS modules: `client`, `flow`, `flow_response`, `files`, `user_file`, `log`, `logs`, `ndjson`, `upload_response`, `types`.
+- Added tests mirroring TS behavior and fixtures reuse.
+- Added `pyproject.toml`, `README.md`, and `architecture.md`. Pending: run tests in uv venv, refine README with badges, finalize publish instructions.
+
+

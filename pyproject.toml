@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "langflow-client"
+version = "0.1.0"
+description = "Official Python client for the Langflow API"
+readme = "README.md"
+authors = [{ name = "Ilya Melnikov" }]
+license = { file = "LICENSE" }
+requires-python = ">=3.9"
+dependencies = [
+  "requests>=2.31",
+]
+classifiers = [
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Software Development :: Libraries",
+]
+keywords = ["langflow", "llm", "ai", "client"]
+
+[project.urls]
+Homepage = "https://github.com/aisurfer/langflow-client-python"
+Issues = "https://github.com/aisurfer/langflow-client-python/issues"
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-q"
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 100
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["langflow_client*"] 
