@@ -25,6 +25,13 @@ classifiers = [
 ]
 keywords = ["langflow", "llm", "ai", "client"]
 
+[project.optional-dependencies]
+test = [
+  "pytest>=7.0",
+  "pytest-asyncio>=1.1.0",
+  "python-dotenv>=1.0.0",
+]
+
 [project.urls]
 Homepage = "https://github.com/aisurfer/langflow-client-python"
 Issues = "https://github.com/aisurfer/langflow-client-python/issues"

@@ -52,12 +52,12 @@
     - Exposes `.flow(id, tweaks=None)`, `.logs`, `.files` helpers.
 
 - `langflow_client/types.py` (lightweight types)
-  - Python typing aliases to mirror TS types (e.g., `Tweaks`, `Tweak`, `StreamEvent` protocol types) to aid static analysis.
+  - Python typing aliases (e.g., `Tweaks`, `Tweak`, `StreamEvent` protocol types) to aid static analysis.
 
 ## HTTP & Streaming
 
 - Uses `requests` under the hood by default.
-- Allows dependency injection of a custom `fetch` callable for testing (mimicking TS `fetch` override). The callable should return a minimal response object with `.ok`, `.status_code`, `.reason`, `.json()`, `.text`, and optional `.iter_content()` for streaming.
+- Allows dependency injection of a custom `fetch` callable for testing. The callable should return a minimal response object with `.ok`, `.status_code`, `.reason`, `.json()`, `.text`, and optional `.iter_content()` for streaming.
 - Streaming endpoints (`/v1/run/{id}?stream=true`, `/logs-stream`) are parsed via `iter_ndjson_objects` to yield events as Python dicts or `Log` objects.
 
 ## URL & Headers behavior
@@ -68,10 +68,9 @@
 
 ## Testing
 
-- Pytest test suite mirrors TS coverage:
+- Pytest test suite:
   - `test_client.py`, `test_flow.py`, `test_flow_response.py`, `test_ndjson.py`, `test_logs.py`, `test_files.py`, `test_user_file.py`.
   - Utilities to create a mock `fetch` callable and to compare binary blobs.
-  - JSON fixtures reused from TS reference for parity.
 
 ## Packaging & Tooling
 
