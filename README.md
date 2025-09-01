@@ -8,20 +8,8 @@ This package provides an easy way to use the Langflow API to run flows from Pyth
 
 ## Installation
 
-Using uv (recommended):
-
 ```bash
-uv venv
-source .venv/bin/activate
-uv pip install -e .
-```
-
-Using pip:
-
-```bash
-python -m venv venv
-source venv/bin/activate
-pip install -e .
+pip install langflow-client
 ```
 
 ## Prerequisites
@@ -91,59 +79,6 @@ with open("document.pdf", "rb") as f:
     uploaded = client.files.upload(f, filename="document.pdf", content_type="application/pdf")
 
 files = client.files.list()
-```
-
-### Logs
-
-```python
-# Fetch recent logs
-logs = client.logs.fetch()
-
-# Stream logs
-for log in client.logs.stream():
-    print(log.timestamp, log.message)
-```
-
-### Aborting requests
-
-Pass a custom object with `throw_if_aborted()` to emulate AbortController semantics if desired. Alternatively, use request timeouts at the HTTP layer.
-
-## Development
-
-- Create env and install dev dependencies:
-
-```bash
-uv venv
-source .venv/bin/activate
-uv pip install -e .
-uv pip install pytest ruff
-```
-
-- Run tests:
-
-```bash
-pytest
-```
-
-- Lint:
-
-```bash
-ruff check .
-```
-
-## Publishing to PyPI
-
-1. Update version in `pyproject.toml`.
-2. Build:
-
-```bash
-python -m build
-```
-
-3. Upload:
-
-```bash
-python -m twine upload dist/*
 ```
 
 ## License
